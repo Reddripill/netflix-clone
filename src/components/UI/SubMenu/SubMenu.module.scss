@@ -1,0 +1,22 @@
+.submenu {
+  @apply absolute top-full right-0 w-[150px] 
+  bg-darkColor py-2 opacity-0 invisible;
+  &._active {
+    @apply opacity-100 visible;
+  }
+}
+.main {
+  @apply pb-[11px] border-b border-[#929292] px-2;
+}
+.profiles {
+  @apply mb-[10px] flex flex-col gap-y-3;
+}
+.profile {
+  @apply flex gap-x-2 items-center;
+}
+.avatar {
+  @apply w-9 h-9 rounded-full bg-grayColor;
+}
+.additional {
+  @apply mt-2 px-2 flex flex-col gap-y-[6px];
+}

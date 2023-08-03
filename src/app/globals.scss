@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  @apply font-poppins;
+}
+
+.container {
+  @apply max-w-container mx-auto
+  px-[15px];
+}
+
+.texts {
+  @apply text-mainColor text-sm font-quick font-medium;
+}
+
+.swiper-pagination {
+  @apply flex items-center gap-1;
+  @apply absolute bottom-[100px] left-[calc(50%+20px)] #{!important};
+}
+
+/* .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  @apply bottom-0 #{!important};
+} */
+
+.swiper-pagination-element {
+  @apply inline-block bg-pagination w-8 h-1 cursor-pointer;
+}
+
+.swiper-pagination-active-element {
+  @apply inline-block bg-redColor w-8 h-1;
+}

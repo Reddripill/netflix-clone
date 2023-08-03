@@ -1,0 +1,24 @@
+.burger {
+  @apply absolute top-1/2 left-[15px] w-5 h-[15px] cursor-pointer
+  -translate-y-1/2 transition-all md:hidden;
+}
+.burger__wrapper {
+  @apply relative w-full h-full before:content-[''] before:absolute
+  before:left-0 before:w-full before:h-[2px] before:bg-redColor before:top-0
+  after:content-[''] after:absolute after:left-0 after:w-full after:h-[2px] 
+  after:bg-redColor after:bottom-0;
+  span {
+    @apply absolute left-0 w-full h-[2px] bg-redColor top-1/2
+    -translate-y-1/2 scale-100;
+  }
+}
+.burger._active {
+  @apply left-[calc(40%+15px)];
+  & .burger__wrapper {
+    @apply before:top-1/2 before:-translate-y-1/2 before:rotate-45
+      after:top-1/2 after:-translate-y-1/2 after:-rotate-45;
+    span {
+      @apply scale-0;
+    }
+  }
+}

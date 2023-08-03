@@ -1,0 +1,58 @@
+.film-poster {
+  &__body {
+    @apply w-full relative;
+  }
+  &__container {
+    @apply pt-[100px] pb-20;
+  }
+  &__item {
+    @apply relative z-[4] flex flex-col gap-14 max-w-[520px];
+  }
+  &__name {
+    @apply mb-[30px] font-bold text-[100px] text-mainColor uppercase;
+  }
+  &__content {
+    @apply flex flex-col gap-[18px];
+  }
+  &__overview {
+    @apply flex items-center gap-4;
+  }
+  &__about {
+    @apply flex items-center gap-1;
+  }
+  &__age-restriction {
+    @apply py-[1px] px-[3px] border border-mainColor;
+  }
+  &__genres {
+    @apply relative pl-2 before:content-[''] before:absolute before:w-1
+    before:h-1 before:rounded-full before:bg-mainColor before:left-0
+    before:top-1/2 before:-translate-y-1/2;
+  }
+  &__information {
+    @apply flex items-center gap-4;
+  }
+  &__fullname {
+    @apply font-poppins;
+    span {
+      @apply text-redColor;
+    }
+  }
+  &__description {
+    @apply max-w-[500px];
+  }
+  &__actions {
+    @apply flex items-center gap-8;
+  }
+  &__button {
+    @apply flex items-center justify-between gap-2;
+  }
+  &__image {
+    @apply absolute top-0 left-0 w-full h-[600px] z-[2];
+    &__block {
+      @apply h-full w-full;
+      img {
+        @apply object-cover object-center;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.button {
+  @apply min-w-[80px] h-8 font-poppins text-xs
+  tracking-[0.6px] text-mainColor uppercase bg-darkBtn
+  px-[14px] w-full rounded-3xl;
+}
+.button-dark {
+  @apply bg-darkBtn;
+}
+.button-red {
+  @apply bg-redColor;
+}
