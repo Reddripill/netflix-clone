@@ -1,0 +1,28 @@
+.header {
+  @apply fixed h-[85px] bg-darkColor w-full;
+}
+.wrapper {
+  @apply flex h-full justify-between items-center;
+}
+.main {
+  @apply flex items-center gap-[150px];
+}
+.nav-wrapper {
+  @apply flex items-center flex-wrap gap-x-6;
+}
+.nav-item {
+  @apply text-sm text-grayColor
+  hover:underline hover:text-mainColor
+ decoration-redColor underline-offset-4
+  decoration-2;
+  &._active {
+    @apply underline text-mainColor decoration-redColor underline-offset-4 decoration-2;
+  }
+}
+.actions {
+  @apply flex items-center gap-6;
+}
+.circle {
+  @apply rounded-full bg-grayColor h-[36px] 
+  w-[36px] cursor-pointer;
+}
