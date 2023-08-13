@@ -1,7 +1,10 @@
 .button {
-  @apply min-w-[80px] h-8 font-poppins text-xs
-  tracking-[0.6px] text-mainColor uppercase bg-darkBtn
-  px-[14px] w-full rounded-3xl;
+  @apply min-w-[80px] sm:h-8 font-poppins sm:text-xs
+  sm:tracking-[0.6px] text-mainColor uppercase bg-darkBtn
+  px-[14px] w-full sm:rounded-3xl rounded-2xl text-xs h-[26px];
+  svg {
+    @apply sm:text-xl text-base #{!important};
+  }
 }
 .button-dark {
   @apply bg-darkBtn;

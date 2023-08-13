@@ -17,12 +17,13 @@ const SwiperSlider = ({ children }: { children: React.ReactNode }) => {
           bulletActiveClass: "swiper-pagination-active-element",
           bulletClass: "swiper-pagination-element",
         }}
-        autoplay={{
+        /* autoplay={{
           delay: 5000,
-        }}
+        }} */
         loop={true}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        className="overflow-visible"
       >
         {children}
         <PaginationElem ref={paginationRef} />
