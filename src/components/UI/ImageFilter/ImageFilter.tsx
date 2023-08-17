@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ImageFilter.module.scss";
-// import cn from "classnames";
+import cn from "classnames";
 
-const ImageFilter = ({ styles }: { styles?: string }) => {
-  return <div className={`absolute top-0 left-0 w-full h-full`} />;
+const ImageFilter = ({ externalStyles }: { externalStyles?: any }) => {
+   return <div className={styles["image-filter"]} style={externalStyles} />;
 };
 
 export default ImageFilter;

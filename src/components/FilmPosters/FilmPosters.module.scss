@@ -1,61 +1,62 @@
 .film-poster {
-  &__body {
-    @apply w-full h-full relative;
-  }
-  &__container {
-    @apply xl:pt-[125px] sm:pb-20 pt-[50px] pb-14;
-  }
-  &__item {
-    @apply relative z-[4] flex flex-col gap-14 sm:max-w-[calc((520/1185)*100%)]
-    max-md:gap-8 max-w-full;
-  }
-  &__name {
-    @apply mb-[30px] font-bold lg:text-[100px] text-mainColor uppercase
-    text-[64px] leading-none max-md:mb-4 max-sm:text-5xl max-sm:max-w-[250px];
-  }
-  &__content {
-    @apply flex flex-col gap-[18px];
-  }
-  &__overview {
-    @apply flex flex-wrap items-center gap-4;
-  }
-  &__about {
-    @apply flex items-center gap-1;
-  }
-  &__age-restriction {
-    @apply py-[1px] px-[3px] border border-mainColor;
-  }
-  &__genres {
-    @apply relative pl-2 before:content-[''] before:absolute before:w-1
+   @apply block;
+   &__body {
+      @apply w-full h-full relative;
+   }
+   &__container {
+      @apply xl:pt-[125px] sm:pb-20 pt-[50px] pb-14;
+   }
+   &__item {
+      @apply relative z-[4] flex flex-col gap-14 sm:max-w-[calc((520/1185)*100%)]
+      max-md:gap-8 max-w-full;
+   }
+   &__name {
+      @apply mb-[30px] font-bold lg:text-[100px] text-mainColor uppercase
+      text-[64px] leading-none max-md:mb-4 max-sm:text-5xl max-sm:max-w-[250px];
+   }
+   &__content {
+      @apply flex flex-col gap-[18px];
+   }
+   &__overview {
+      @apply flex flex-wrap items-center gap-4;
+   }
+   &__about {
+      @apply flex items-center gap-1;
+   }
+   &__age-restriction {
+      @apply py-[1px] px-[3px] border border-mainColor;
+   }
+   &__genres {
+      @apply relative pl-2 before:content-[''] before:absolute before:w-1
     before:h-1 before:rounded-full before:bg-mainColor before:left-0
     before:top-1/2 before:-translate-y-1/2;
-  }
-  &__information {
-    @apply flex items-center md:gap-x-4 gap-x-2 flex-wrap gap-y-1;
-  }
-  &__fullname {
-    @apply font-poppins;
-    span {
-      @apply text-redColor;
-    }
-  }
-  &__description {
-    @apply max-w-[500px];
-  }
-  &__actions {
-    @apply flex items-center md:gap-8 gap-4;
-  }
-  &__button {
-    @apply flex items-center justify-between gap-2;
-  }
-  &__image {
-    @apply absolute top-0 left-0 w-full max-xl:h-full;
-    &__block {
-      @apply relative xl:pb-[calc((670/1520)*100%)] max-xl:h-full w-full;
-      img {
-        @apply object-cover lg:object-[0px_-60px] max-md:object-right
-        max-sm:object-[90%_0px];
+   }
+   &__information {
+      @apply flex items-center md:gap-x-4 gap-x-2 flex-wrap gap-y-1;
+   }
+   &__fullname {
+      @apply font-poppins;
+      span {
+         @apply text-redColor;
       }
-    }
-  }
+   }
+   &__description {
+      @apply max-w-[500px];
+   }
+   &__actions {
+      @apply flex items-center md:gap-8 gap-4;
+   }
+   &__button {
+      @apply flex items-center justify-between gap-2;
+   }
+   &__image {
+      @apply absolute top-0 left-0 w-full h-full;
+      &__block {
+         @apply relative max-xl:h-full w-full h-full z-[2];
+         img {
+            @apply object-cover lg:object-[0px_-60px] max-md:object-right
+        max-sm:object-[90%_0px];
+         }
+      }
+   }
 }

@@ -17,29 +17,29 @@
 } */
 
 body {
-  @apply font-poppins;
+   @apply font-poppins bg-darkColor;
 }
 
 .container {
-  @apply max-w-container mx-auto px-[15px];
+   @apply max-w-container mx-auto px-[15px];
 }
 
 .texts {
-  @apply text-mainColor lg:text-sm font-quick font-medium
+   @apply text-mainColor lg:text-sm font-quick font-medium
   text-xs;
 }
 
 .swiper {
-  @apply xl:overflow-y-visible #{!important};
+   @apply xl:overflow-y-visible #{!important};
 }
 
 .swiper-slide {
-  @apply h-auto #{!important};
+   @apply h-auto #{!important};
 }
 
 .swiper-pagination {
-  @apply flex items-center sm:gap-1 gap-2;
-  @apply absolute bottom-[100px] left-[calc(50%+20px)]
+   @apply flex items-center sm:gap-1 gap-2;
+   @apply absolute bottom-[100px] left-[calc(50%+20px)]
   max-xl:left-0 max-xl:flex max-xl:justify-center max-xl:bottom-12 
   max-md:bottom-6 #{!important};
 }
@@ -50,9 +50,9 @@ body {
 } */
 
 .swiper-pagination-element {
-  @apply inline-block bg-pagination w-8 h-1 cursor-pointer;
+   @apply inline-block bg-pagination w-8 h-1 cursor-pointer;
 }
 
 .swiper-pagination-active-element {
-  @apply inline-block bg-redColor w-8 h-1;
+   @apply inline-block bg-redColor w-8 h-1;
 }

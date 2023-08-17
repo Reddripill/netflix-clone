@@ -1,0 +1,20 @@
+.background-video {
+   @apply absolute top-0 left-0 w-full h-full z-[10];
+   &__wrapper {
+      @apply h-full w-full relative;
+   }
+   &__player {
+      @apply h-full w-full;
+      video {
+         @apply h-full w-full object-cover;
+      }
+   }
+   &__actions {
+      @apply absolute bottom-8 right-8 z-[12];
+   }
+   &__action {
+      svg {
+         @apply text-3xl text-mainColor cursor-pointer;
+      }
+   }
+}

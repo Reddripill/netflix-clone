@@ -1,0 +1,9 @@
+.films-suggestions {
+   @apply flex flex-col gap-8 mb-24 relative z-[2];
+   &__title {
+      @apply text-mainColor text-xl mb-4;
+   }
+   &__list {
+      @apply grid grid-rows-1 grid-cols-5 gap-1;
+   }
+}

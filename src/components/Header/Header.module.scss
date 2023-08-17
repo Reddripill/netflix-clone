@@ -1,55 +1,55 @@
 .header {
-  @apply fixed h-[50px] bg-darkColor w-full md:h-[85px] z-10;
+   @apply fixed h-[50px] bg-darkColor w-full md:h-[85px] z-50;
 }
 .wrapper {
-  @apply flex h-full justify-between items-center gap-[calc((40/1185)*100%)]
+   @apply flex h-full justify-between items-center gap-[calc((40/1185)*100%)]
   relative;
 }
 .main {
-  @apply items-center grow md:flex lg:gap-[150px] md:gap-[50px];
+   @apply items-center grow md:flex lg:gap-[150px] md:gap-[50px];
 }
 .logo {
-  @apply pl-10 md:pl-0 flex items-center;
-  a {
-    @apply inline-block;
-  }
+   @apply pl-10 md:pl-0 flex items-center;
+   a {
+      @apply inline-block;
+   }
 }
 .menu-logo {
-  @apply hidden max-md:basis-[50px] max-md:shrink-0
+   @apply hidden max-md:basis-[50px] max-md:shrink-0
    max-md:flex max-md:pl-[55px] items-center;
-  a {
-    @apply inline-block;
-  }
+   a {
+      @apply inline-block;
+   }
 }
 .nav {
-  @apply max-md:fixed max-md:top-0 max-md:-left-full max-md:z-20 
+   @apply max-md:fixed max-md:top-0 max-md:-left-full max-md:z-20 
   max-md:h-screen max-md:w-[40%] max-md:bg-darkColor transition-all
   max-md:flex max-md:flex-col max-md:overflow-auto;
-  &._active {
-    @apply left-0;
-  }
+   &._active {
+      @apply left-0;
+   }
 }
 .nav-wrapper {
-  @apply items-center flex-wrap flex
+   @apply items-center flex-wrap flex
   md:gap-x-3 lg:gap-x-6 max-md:flex-col max-md:mt-10 max-md:pb-8
   max-md:gap-x-0 max-md:gap-y-4;
 }
 .nav-item {
-  @apply text-grayColor hover:text-mainColor
+   @apply text-grayColor hover:text-mainColor
  decoration-redColor underline-offset-4 decoration-2 md:text-sm
    text-xl;
-  &._active {
-    @apply underline text-mainColor
+   &._active {
+      @apply underline text-mainColor
     underline-offset-4 decoration-2;
-  }
+   }
 }
 .actions {
-  @apply flex items-center gap-3 lg:gap-6 cursor-pointer;
+   @apply flex items-center gap-3 lg:gap-6 cursor-pointer;
 }
 .action {
-  @apply relative;
+   @apply relative;
 }
 .circle {
-  @apply rounded-full bg-grayColor h-[28px] 
+   @apply rounded-full bg-grayColor h-[28px] 
   w-[28px] cursor-pointer md:h-[36px] md:w-[36px];
 }
