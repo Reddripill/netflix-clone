@@ -1,27 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Swiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import PaginationElem from "./Pagination";
-import { SetState } from "@/utilities/types";
 
-const SwiperSlider = ({
-   children,
-   isPlaying,
-   setIsPlaying,
-}: {
-   children: React.ReactNode;
-   isPlaying: boolean;
-   setIsPlaying: SetState<boolean>;
-}) => {
-   const paginationRef = useRef<HTMLDivElement>(null);
-   const playVideo = () => {
-      setIsPlaying(false);
-      setTimeout(() => {
-         setIsPlaying(true);
-      }, 1500);
-   };
+const SwiperSlider = ({ children }: { children: React.ReactNode }) => {
    return (
       <>
          <Swiper
@@ -32,17 +16,13 @@ const SwiperSlider = ({
                bulletActiveClass: "swiper-pagination-active-element",
                bulletClass: "swiper-pagination-element",
             }}
-            autoplay={{
-               delay: 15000,
-            }}
+            autoplay={false}
             loop={true}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
-            onInit={playVideo}
-            onActiveIndexChange={playVideo}
          >
             {children}
-            {!isPlaying && <PaginationElem ref={paginationRef} />}
+            <PaginationElem />
          </Swiper>
       </>
    );

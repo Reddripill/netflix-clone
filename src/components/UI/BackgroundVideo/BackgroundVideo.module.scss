@@ -9,6 +9,11 @@
          @apply h-full w-full object-cover;
       }
    }
+   &__content {
+      @apply absolute bottom-8 left-8 z-[12] font-bold 
+      lg:text-[64px] text-mainColor uppercase text-[48px] 
+      leading-none max-sm:text-5xl max-md:max-w-[300px];
+   }
    &__actions {
       @apply absolute bottom-8 right-8 z-[12];
    }

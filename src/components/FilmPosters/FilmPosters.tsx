@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./FilmPosters.module.scss";
 import { films } from "@/utilities/constants";
 import { IFilm } from "@/utilities/types";
@@ -12,25 +12,39 @@ import Image from "next/image";
 import ImageFilter from "../UI/ImageFilter/ImageFilter";
 import SwiperSlider from "../UI/SwiperSlider/SwiperSlider";
 import { SwiperSlide, useSwiperSlide } from "swiper/react";
+// import { SwiperEvents, SwiperOptions } from "swiper/types";
 import BackgroundVideo from "../UI/BackgroundVideo/BackgroundVideo";
 import useIntersection from "@/utilities/hooks/useIntersection";
+// import { Autoplay, Pagination } from "swiper/modules";
 
-const FilmPoster = ({
-   film,
-   isVisible,
-   isPlaying,
-}: {
-   film: IFilm;
-   isVisible: boolean;
-   isPlaying: boolean;
-}) => {
+/* const FilmPostersSwiperOptions: SwiperOptions = {
+   modules: [Pagination, Autoplay],
+   pagination: {
+      clickable: true,
+      el: ".swiper-pagination",
+      bulletActiveClass: "swiper-pagination-active-element",
+      bulletClass: "swiper-pagination-element",
+   },
+   autoplay: {
+      delay: 15000,
+   },
+   loop: true,
+};
+
+const FilmPostersSwiperEvents: SwiperEvents = {
+   _swiper: (swiper) => console.log(swiper),
+   slideChange: () => console.log("slide change"),
+   init: playVideo
+   onActiveIndexChange={playVideo}
+}; */
+
+const FilmPoster = ({ film }: { film: IFilm }) => {
    const createGenres = (genres: string[]): string => {
       const filteredArr = genres.map((genre) => {
          return genre[0].toUpperCase() + genre.slice(1);
       });
       return filteredArr.join("/");
    };
-   const { isActive } = useSwiperSlide();
    return (
       <>
          <div className={styles["film-poster__item"]}>
@@ -113,37 +127,25 @@ const FilmPoster = ({
             </div>
             <ImageFilter externalStyles={film.className} />
          </div>
-         {film.trailer && isActive && isVisible && isPlaying && (
-            <BackgroundVideo video={film.trailer} />
-         )}
       </>
    );
 };
 
 const FilmPosters = () => {
    const swiperRef = useRef<HTMLDivElement>(null);
-   const [isPlaying, setIsPlaying] = useState(false);
-   const { isIntersection: isVisible } = useIntersection(swiperRef);
    return (
       <div className={styles["film-poster"]} ref={swiperRef}>
-         <SwiperSlider isPlaying={isPlaying} setIsPlaying={setIsPlaying}>
+         <SwiperSlider>
             {films.map((film) => (
                <SwiperSlide key={film.id}>
-                  <div
-                     className={styles["film-poster__body"]}
-                     // onMouseOut={() => swiper.autoplay.resume()}
-                  >
+                  <div className={styles["film-poster__body"]}>
                      <div
                         className={cn(
                            "container",
                            styles["film-poster__container"]
                         )}
                      >
-                        <FilmPoster
-                           film={film}
-                           isVisible={isVisible}
-                           isPlaying={isPlaying}
-                        />
+                        <FilmPoster film={film} />
                      </div>
                   </div>
                </SwiperSlide>

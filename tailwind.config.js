@@ -16,14 +16,18 @@ module.exports = {
             grayColor: "#949494",
             darkBtn: "#252525",
             pagination: "#787878",
+            footerGrayColor: "#616161",
          },
          maxWidth: {
-            container: "1185px",
+            container: "1440px",
          },
          fontFamily: {
             quick: ["var(--font-quicksand)"],
             poppins: ["var(--font-poppins)"],
          },
+         /*          screens: {
+            container: "1185px",
+         }, */
       },
       transitionDuration: {
          DEFAULT: "400ms",

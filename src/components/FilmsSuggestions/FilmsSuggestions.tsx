@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import styles from "./FilmsSuggestions.module.scss";
 import Image from "next/image";
+import FilmsSuggestionsSwiper from "./FilmsSuggestionsSwiper";
+import { SwiperSlide } from "swiper/react";
 
 interface ISuggestion {
    title: string;
@@ -124,31 +127,32 @@ export const FilmsSuggestionsRow = ({
          <div className={styles["films-suggestions__title"]}>
             {suggestion.title}
          </div>
-         <ul className={styles["films-suggestions__list"]}>
-            {suggestion.films.map((item) => (
-               <li className={styles["films-suggestions__image"]} key={item.id}>
-                  <Image
-                     src={item.image}
-                     alt="Suggestioned Film"
-                     height={155}
-                     width={275}
-                  />
-               </li>
-            ))}
-         </ul>
+         <div className={styles["films-suggestions__list"]}>
+            <FilmsSuggestionsSwiper>
+               {suggestion.films.map((item) => (
+                  <SwiperSlide key={item.id}>
+                     <div className={styles["films-suggestions__image"]}>
+                        <Image src={item.image} alt="Suggestioned Film" fill />
+                     </div>
+                  </SwiperSlide>
+               ))}
+            </FilmsSuggestionsSwiper>
+         </div>
       </div>
    );
 };
 
 export const FilmsSuggestions = () => {
    return (
-      <div className={`${styles["films-suggestions"]} container`}>
-         {suggestions.map((suggestion) => (
-            <FilmsSuggestionsRow
-               key={suggestion.title}
-               suggestion={suggestion}
-            />
-         ))}
+      <div className={`${styles["films-suggestions"]}`}>
+         <div className={`${styles["films-suggestions__container"]} container`}>
+            {suggestions.map((suggestion) => (
+               <FilmsSuggestionsRow
+                  key={suggestion.title}
+                  suggestion={suggestion}
+               />
+            ))}
+         </div>
       </div>
    );
 };

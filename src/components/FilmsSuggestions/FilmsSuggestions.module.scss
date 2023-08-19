@@ -1,9 +1,15 @@
 .films-suggestions {
-   @apply flex flex-col gap-8 mb-24 relative z-[2];
+   @apply mb-12 relative z-[2] mt-6 overflow-hidden;
+   &__container {
+      @apply flex flex-col gap-8;
+   }
    &__title {
       @apply text-mainColor text-xl mb-4;
    }
    &__list {
-      @apply grid grid-rows-1 grid-cols-5 gap-1;
+      @apply overflow-visible;
+   }
+   &__image {
+      @apply relative h-[175px] w-[275px];
    }
 }

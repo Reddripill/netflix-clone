@@ -56,3 +56,32 @@ body {
 .swiper-pagination-active-element {
    @apply inline-block bg-redColor w-8 h-1;
 }
+
+.films-suggestions-swiper {
+   & .swiper-slide {
+      @apply w-[275px];
+   }
+   &:hover {
+      & .films-suggestions-swiper__navigation {
+         @apply visible opacity-100;
+      }
+   }
+}
+
+.films-suggestions-swiper__navigation {
+   @apply absolute top-0 h-full z-[2] px-2 flex
+   justify-center items-center cursor-pointer
+   opacity-0 invisible transition-all hover:bg-[rgba(0,0,0,0.2)];
+   &.swiper-button-disabled {
+      @apply hidden;
+   }
+   &_prev {
+      @apply left-0;
+   }
+   &_next {
+      @apply right-0;
+   }
+   svg {
+      @apply text-2xl text-mainColor;
+   }
+}
