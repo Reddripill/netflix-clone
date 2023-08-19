@@ -1,20 +1,21 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./FilmPosters.module.scss";
 import { films } from "@/utilities/constants";
 import { IFilm } from "@/utilities/types";
 import cn from "classnames";
 import Stars from "../UI/Stars/Stars";
 import Button from "../UI/Button/Button";
-import { BsFillPlayFill } from "react-icons/bs";
-import { BiPlusMedical } from "react-icons/bi";
 import Image from "next/image";
 import ImageFilter from "../UI/ImageFilter/ImageFilter";
 import SwiperSlider from "../UI/SwiperSlider/SwiperSlider";
-import { SwiperSlide, useSwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
+import { BsFillPlayFill } from "react-icons/bs";
+import { BiPlusMedical } from "react-icons/bi";
+import { TiTick } from "react-icons/ti";
 // import { SwiperEvents, SwiperOptions } from "swiper/types";
-import BackgroundVideo from "../UI/BackgroundVideo/BackgroundVideo";
-import useIntersection from "@/utilities/hooks/useIntersection";
+/* import BackgroundVideo from "../UI/BackgroundVideo/BackgroundVideo";
+import useIntersection from "@/utilities/hooks/useIntersection"; */
 // import { Autoplay, Pagination } from "swiper/modules";
 
 /* const FilmPostersSwiperOptions: SwiperOptions = {
@@ -38,12 +39,42 @@ const FilmPostersSwiperEvents: SwiperEvents = {
    onActiveIndexChange={playVideo}
 }; */
 
+const checkIsFilmAdded = (film: IFilm): boolean => {
+   let storageData = localStorage.getItem("myList");
+   let myList;
+   if (storageData) {
+      myList = JSON.parse(storageData) as IFilm[];
+      return myList.find((item) => item.id === film.id) ? true : false;
+   }
+   return false;
+};
+
 const FilmPoster = ({ film }: { film: IFilm }) => {
+   const [isAdded, setIsAdded] = useState(checkIsFilmAdded(film));
    const createGenres = (genres: string[]): string => {
       const filteredArr = genres.map((genre) => {
          return genre[0].toUpperCase() + genre.slice(1);
       });
       return filteredArr.join("/");
+   };
+   const myListManager = (film: IFilm) => {
+      setIsAdded(!isAdded);
+      let storageData = localStorage.getItem("myList");
+      let myList;
+      if (storageData) {
+         myList = JSON.parse(storageData) as IFilm[];
+         console.log(myList);
+         if (!myList.find((item) => item.id === film.id)) {
+            localStorage.setItem("myList", JSON.stringify([...myList, film]));
+         } else {
+            localStorage.setItem(
+               "myList",
+               JSON.stringify(myList.filter((item) => item.id !== film.id))
+            );
+         }
+      } else {
+         localStorage.setItem("myList", JSON.stringify([film]));
+      }
    };
    return (
       <>
@@ -107,14 +138,25 @@ const FilmPoster = ({ film }: { film: IFilm }) => {
                      </div>
                   </Button>
                </div>
-               <div className={styles["film-poster__action"]}>
+               <div
+                  className={styles["film-poster__action"]}
+                  onClick={() => myListManager(film)}
+               >
                   <Button theme="dark">
                      <div className={styles["film-poster__button"]}>
-                        <BiPlusMedical
-                           style={{
-                              fontSize: 16,
-                           }}
-                        />
+                        {isAdded ? (
+                           <TiTick
+                              style={{
+                                 fontSize: 24,
+                              }}
+                           />
+                        ) : (
+                           <BiPlusMedical
+                              style={{
+                                 fontSize: 16,
+                              }}
+                           />
+                        )}
                         My List
                      </div>
                   </Button>

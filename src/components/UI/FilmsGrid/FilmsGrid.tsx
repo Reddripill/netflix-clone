@@ -10,16 +10,20 @@ import Image from "next/image";
 interface IProps {
    title: string;
    isMyList?: boolean;
+   posterFilms?: IFilmImage[];
 }
 
-const FilmsGrid = ({ title, isMyList }: IProps) => {
+const FilmsGrid = ({ title, isMyList, posterFilms }: IProps) => {
    let films: IFilmImage[] = [];
    if (!isMyList) {
       suggestions.forEach((item) => {
          films = films.concat(item.films);
       });
    } else {
-      suggestions.forEach((item, index) => {
+      if (posterFilms) {
+         films = films.concat(posterFilms);
+      }
+      suggestions.forEach((item) => {
          films = films.concat(item.films[0]);
       });
    }
