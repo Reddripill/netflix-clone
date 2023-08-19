@@ -25,9 +25,12 @@ module.exports = {
             quick: ["var(--font-quicksand)"],
             poppins: ["var(--font-poppins)"],
          },
-         /*          screens: {
-            container: "1185px",
-         }, */
+         gridTemplateColumns: {
+            autoFill: "repeat(auto-fill, 275px)",
+         },
+         screens: {
+            con: "1440px",
+         },
       },
       transitionDuration: {
          DEFAULT: "400ms",

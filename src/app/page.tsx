@@ -1,8 +1,10 @@
-import Image from "next/image";
-import path from "path";
-import fsPromises from "fs/promises";
 import FilmPosters from "@/components/FilmPosters/FilmPosters";
 import { FilmsSuggestions } from "@/components/FilmsSuggestions/FilmsSuggestions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "Netflix Clone",
+};
 
 export default function Home() {
    return (

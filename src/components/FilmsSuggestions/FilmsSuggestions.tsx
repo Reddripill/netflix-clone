@@ -5,15 +5,17 @@ import Image from "next/image";
 import FilmsSuggestionsSwiper from "./FilmsSuggestionsSwiper";
 import { SwiperSlide } from "swiper/react";
 
-interface ISuggestion {
-   title: string;
-   films: {
-      id: string;
-      image: string;
-   }[];
+export interface IFilmImage {
+   id: string;
+   image: string;
 }
 
-const suggestions: ISuggestion[] = [
+export interface ISuggestion {
+   title: string;
+   films: IFilmImage[];
+}
+
+export const suggestions: ISuggestion[] = [
    {
       title: "Continue Watching",
       films: [

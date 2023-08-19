@@ -1,0 +1,13 @@
+.films-grid {
+   &__title {
+      @apply text-mainColor md:text-3xl md:pt-14 md:mb-12
+      text-2xl pt-10 mb-8 max-sm:pt-8;
+   }
+   &__content {
+      @apply grid grid-cols-autoFill con:justify-between gap-2
+      items-center justify-center;
+   }
+   &__item {
+      @apply relative h-[175px] w-[275px];
+   }
+}
