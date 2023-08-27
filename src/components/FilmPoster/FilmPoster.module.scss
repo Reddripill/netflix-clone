@@ -1,0 +1,27 @@
+.film-poster {
+   @apply relative w-full pb-[calc((64/1440)*100%)] pt-[calc((400/1440)*100%)];
+   &__wrapper {
+      @apply relative z-[5] flex flex-col gap-8 items-start;
+   }
+   &__content {
+      @apply flex flex-col gap-8 text-mainColor text-base;
+   }
+   &__contributor {
+      @apply flex items-center gap-3;
+   }
+   &__name {
+      @apply uppercase text-mainColor text-4xl;
+   }
+   &__actions {
+      @apply flex items-center gap-3;
+   }
+}
+.film-poster-image {
+   @apply absolute top-0 left-0 w-full;
+   &__wrapper {
+      @apply relative h-full w-full pb-[calc((810/1440)*100%)];
+      & img {
+         @apply object-cover object-top z-[2];
+      }
+   }
+}

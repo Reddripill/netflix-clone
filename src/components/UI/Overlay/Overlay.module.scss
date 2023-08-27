@@ -1,0 +1,6 @@
+.overlay {
+   @apply relative w-full z-[3] h-full;
+   &__content {
+      @apply relative z-[5] bg-overlay;
+   }
+}

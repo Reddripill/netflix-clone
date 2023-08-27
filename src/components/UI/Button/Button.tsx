@@ -1,20 +1,20 @@
-import React from 'react'
-import styles from './Button.module.scss'
+import React from "react";
+import styles from "./Button.module.scss";
 
 interface IProps {
-   theme: 'dark' | 'red';
-   children: React.ReactNode
+   theme: "white" | "gray";
+   children: React.ReactNode;
 }
 
-const Button = ({children, theme}: IProps) => {
-  return (
-    <button
-      type='button'
-      className={`${styles.button} ${styles[`button-${theme}`]}`}
-    >
-      {children}
-    </button>
-  )
-}
+const Button = ({ children, theme }: IProps) => {
+   return (
+      <button
+         type="button"
+         className={`${styles.button} ${styles[`button-${theme}`]}`}
+      >
+         {children}
+      </button>
+   );
+};
 
-export default Button
+export default Button;

@@ -1,6 +1,7 @@
-import FilmPosters from "@/components/FilmPosters/FilmPosters";
+import FilmPosters from "@/components/FilmPoster/FilmPoster";
 import { FilmsSuggestions } from "@/components/FilmsSuggestions/FilmsSuggestions";
 import { Metadata } from "next";
+import Overlay from "@/components/UI/Overlay/Overlay";
 
 export const metadata: Metadata = {
    title: "Netflix Clone",
@@ -8,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
    return (
-      <div>
+      <>
          <FilmPosters />
-         <FilmsSuggestions />
-      </div>
+         <Overlay>
+            <FilmsSuggestions />
+         </Overlay>
+      </>
    );
 }

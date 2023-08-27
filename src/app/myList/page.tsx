@@ -1,28 +1,33 @@
 "use client";
+import React, { useEffect, useState } from "react";
+import { Metadata } from "next";
 import FilmsGrid from "@/components/UI/FilmsGrid/FilmsGrid";
 import { IFilm } from "@/utilities/types";
-import { Metadata } from "next";
-import React from "react";
+import { IFilmImage } from "@/components/FilmsSuggestions/FilmsSuggestions";
 
 export const metadata: Metadata = {
    title: "My List",
 };
 
-const page = () => {
-   let storageData = localStorage.getItem("myList");
-   let myFilms;
-   if (storageData) {
-      const myList = JSON.parse(storageData) as IFilm[];
-      myFilms = myList.map((item) => ({
-         id: item.id,
-         image: item.poster,
-      }));
-   }
+const Page = () => {
+   const [myList, setMyList] = useState<IFilmImage[]>();
+   useEffect(() => {
+      let storageData = localStorage.getItem("myList");
+      if (storageData) {
+         const myListData = (JSON.parse(storageData) as IFilm[]).map(
+            (item) => ({
+               id: item.id,
+               image: item.poster,
+            })
+         );
+         setMyList(myListData);
+      }
+   }, []);
    return (
       <>
-         <FilmsGrid title="My List" isMyList={true} posterFilms={myFilms} />
+         <FilmsGrid title="My List" isMyList={true} posterFilms={myList} />
       </>
    );
 };
 
-export default page;
+export default Page;

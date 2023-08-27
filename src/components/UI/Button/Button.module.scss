@@ -1,14 +1,14 @@
 .button {
-  @apply min-w-[80px] sm:h-8 font-poppins sm:text-xs
-  sm:tracking-[0.6px] text-mainColor uppercase bg-darkBtn
-  px-[14px] w-full sm:rounded-3xl rounded-2xl text-xs h-[26px];
-  svg {
-    @apply sm:text-xl text-base #{!important};
-  }
+   @apply font-poppins text-mainColor uppercase
+   px-4 rounded-[4px] text-sm h-10 flex items-center
+   justify-center;
+   svg {
+      @apply sm:text-xl text-base #{!important};
+   }
 }
-.button-dark {
-  @apply bg-darkBtn;
+.button-gray {
+   @apply bg-graybtn text-mainColor;
 }
-.button-red {
-  @apply bg-redColor;
+.button-white {
+   @apply text-mainBg bg-mainColor;
 }

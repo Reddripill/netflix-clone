@@ -11,7 +11,6 @@ export interface IUseOutsideHook {
 export interface IFilm {
    id: string;
    name: string;
-   nameImage?: string;
    type: "serial" | "film";
    rating: number;
    year: number;
@@ -22,9 +21,9 @@ export interface IFilm {
    duration: string;
    description: string;
    poster: string;
-   height: number;
-   className?: any;
-   trailer?: string;
+   image: string;
+   match: string;
+   label?: string;
 }
 
 export type RefType<T> = React.RefObject<T>;

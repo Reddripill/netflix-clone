@@ -1,0 +1,54 @@
+.film-card {
+   @apply h-full w-full;
+   &__wrapper {
+      @apply h-full w-full inline-block;
+   }
+   &__image {
+      @apply relative h-full w-full rounded-md
+      overflow-hidden cursor-pointer;
+   }
+   &__more {
+      @apply absolute invisible opacity-0 top-full left-0
+      p-4 w-full flex flex-col gap-4;
+   }
+   &__actions {
+      @apply flex items-center justify-between;
+   }
+   &__estimations {
+      @apply flex items-center gap-2;
+   }
+   &__action {
+      @apply w-7 h-7 rounded-full border border-mainColor
+      flex items-center justify-center text-mainColor 
+      cursor-pointer transition-all hover:bg-mainColor;
+      &_collapsed {
+         @apply -rotate-180;
+      }
+      &_dislike {
+         @apply rotate-180;
+      }
+      svg {
+         @apply text-base;
+      }
+   }
+
+   &__information {
+      @apply flex items-center gap-2;
+   }
+   &__match {
+      @apply text-green text-xs;
+   }
+   &__age-restriction {
+      @apply border border-mainColor text-mainColor text-xs;
+   }
+   &__season {
+      @apply text-mainColor text-xs;
+   }
+   &__quality {
+      @apply border border-mainColor rounded-[4px] text-mainColor
+      text-xs;
+   }
+   &__genre {
+      @apply text-mainColor text-xs;
+   }
+}

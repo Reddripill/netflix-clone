@@ -11,15 +11,9 @@ module.exports = {
          colors: {
             mainColor: "#FFFFFF",
             redColor: "#D81F26",
-            nameColor: "#ECECEC",
-            darkColor: "#000000",
-            grayColor: "#949494",
-            darkBtn: "#252525",
-            pagination: "#787878",
-            footerGrayColor: "#616161",
-         },
-         maxWidth: {
-            container: "1440px",
+            mainBg: "#141414",
+            green: "#3DCD5E",
+            graybtn: "rgba(255,255,255,0.5)",
          },
          fontFamily: {
             quick: ["var(--font-quicksand)"],
@@ -31,9 +25,16 @@ module.exports = {
          screens: {
             con: "1440px",
          },
+         transitionProperty: {
+            transform: "transform",
+         },
       },
       transitionDuration: {
          DEFAULT: "400ms",
+      },
+      backgroundImage: {
+         overlay:
+            "linear-gradient(180deg, rgba(20, 20, 20, 0.00) 0%, #141414 100%)",
       },
    },
    plugins: [],

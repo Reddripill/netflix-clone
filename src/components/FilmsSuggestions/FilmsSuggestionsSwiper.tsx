@@ -7,8 +7,10 @@ import NavigationElem from "../UI/Navigation";
 
 const FilmsSuggestionsSwiper = ({
    children,
+   type,
 }: {
    children: React.ReactNode;
+   type?: string;
 }) => {
    return (
       <>
@@ -20,8 +22,12 @@ const FilmsSuggestionsSwiper = ({
             onSlideChange={() => console.log("slide change")}
             initialSlide={1}
             slidesPerView={"auto"}
-            spaceBetween={4}
-            className="films-suggestions-swiper"
+            spaceBetween={type === "numbered" ? 25 : 16}
+            className={
+               type === "numbered"
+                  ? "films-suggestions-swiper-numbered"
+                  : "films-suggestions-swiper"
+            }
             navigation={{
                nextEl: ".films-suggestions-swiper__navigation_next",
                prevEl: ".films-suggestions-swiper__navigation_prev",

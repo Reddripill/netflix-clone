@@ -1,7 +1,7 @@
 "use client";
 import {
    IFilmImage,
-   suggestions,
+   suggestionы,
 } from "@/components/FilmsSuggestions/FilmsSuggestions";
 import React from "react";
 import styles from "./FilmsGrid.module.scss";
