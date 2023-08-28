@@ -1,5 +1,5 @@
 .header {
-   @apply fixed h-[50px] bg-transparent w-full md:h-[85px] z-50;
+   @apply fixed h-[50px] bg-header w-full md:h-[85px] z-50;
 }
 .wrapper {
    @apply flex h-full justify-between items-center gap-[calc((40/1440)*100%)]

@@ -15,6 +15,12 @@
    &__actions {
       @apply flex items-center gap-3;
    }
+   &__action {
+      @apply flex items-center gap-1;
+      & svg {
+         @apply text-2xl;
+      }
+   }
 }
 .film-poster-image {
    @apply absolute top-0 left-0 w-full;

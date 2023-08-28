@@ -1,15 +1,10 @@
 "use client";
 import React from "react";
 import styles from "./FilmPoster.module.scss";
-import { IFilm } from "@/utilities/types";
-import cn from "classnames";
 import Button from "../UI/Button/Button";
 import Image from "next/image";
-import ImageFilter from "../UI/Overlay/Overlay";
 import { filmPoster, testFilm } from "@/utilities/constants";
-/* import { BsFillPlayFill } from "react-icons/bs";
-import { BiPlusMedical } from "react-icons/bi";
-import { TiTick } from "react-icons/ti"; */
+import { BiPlay, BiInfoCircle } from "react-icons/bi";
 
 const FilmPoster = () => {
    return (
@@ -33,8 +28,18 @@ const FilmPoster = () => {
                   />
                </div>
                <div className={styles["film-poster__actions"]}>
-                  <Button theme="white">Play</Button>
-                  <Button theme="gray">More info</Button>
+                  <Button theme="white">
+                     <div className={styles["film-poster__action"]}>
+                        <BiPlay />
+                        <p>Play</p>
+                     </div>
+                  </Button>
+                  <Button theme="gray">
+                     <div className={styles["film-poster__action"]}>
+                        <BiInfoCircle />
+                        <p>More Info</p>
+                     </div>
+                  </Button>
                </div>
             </div>
             <div className={styles["film-poster-image"]}>

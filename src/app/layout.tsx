@@ -4,7 +4,7 @@ import styles from "./layout.module.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Main from "@/components/Main/Main";
-import { poppins, quicksand } from "@/utilities/fonts";
+import { openSans, roboto } from "@/utilities/fonts";
 
 export const metadata: Metadata = {
    title: "Netflix Clone",
@@ -20,7 +20,7 @@ export default function RootLayout({
    children: React.ReactNode;
 }) {
    return (
-      <html lang="en" className={`${quicksand.variable} ${poppins.variable}`}>
+      <html lang="en" className={`${roboto.variable} ${openSans.variable}`}>
          <body>
             <div className={styles.wrapper}>
                <Header />

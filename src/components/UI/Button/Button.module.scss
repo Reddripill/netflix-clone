@@ -1,14 +1,15 @@
 .button {
-   @apply font-poppins text-mainColor uppercase
-   px-4 rounded-[4px] text-sm h-10 flex items-center
-   justify-center;
+   @apply font-poppins text-mainColor px-4 rounded-[4px] 
+   text-sm h-10 flex items-center justify-center transition-colors;
    svg {
       @apply sm:text-xl text-base #{!important};
    }
 }
 .button-gray {
-   @apply bg-graybtn text-mainColor;
+   @apply bg-[rgba(255,255,255,0.5)] text-mainColor
+   hover:bg-[rgba(255,255,255,0.25)];
 }
 .button-white {
-   @apply text-mainBg bg-mainColor;
+   @apply text-mainBg bg-mainColor 
+   hover:bg-[rgba(255,255,255,0.75)];
 }

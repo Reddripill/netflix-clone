@@ -13,11 +13,12 @@ module.exports = {
             redColor: "#D81F26",
             mainBg: "#141414",
             green: "#3DCD5E",
-            graybtn: "rgba(255,255,255,0.5)",
          },
          fontFamily: {
             quick: ["var(--font-quicksand)"],
             poppins: ["var(--font-poppins)"],
+            openSans: ["var(--font-open-sans)"],
+            roboto: ["var(--font-roboto)"],
          },
          gridTemplateColumns: {
             autoFill: "repeat(auto-fill, 275px)",
@@ -34,7 +35,9 @@ module.exports = {
       },
       backgroundImage: {
          overlay:
-            "linear-gradient(180deg, rgba(20, 20, 20, 0.00) 0%, #141414 100%)",
+            "linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, #141414 85px)",
+         header:
+            "linear-gradient(180deg, rgba(20, 20, 20, 0.50) 0%, rgba(20, 20, 20, 0.00) 100%)",
       },
    },
    plugins: [],

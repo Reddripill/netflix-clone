@@ -17,7 +17,7 @@
 } */
 
 body {
-   @apply font-poppins bg-mainBg;
+   @apply font-openSans bg-mainBg;
 }
 
 .container {
@@ -64,12 +64,13 @@ body {
 
 .films-suggestions-swiper {
    & .swiper-slide {
-      @apply h-[146px] w-[260px];
-      &:hover {
+      @apply h-[146px] w-[260px] z-[1] transition-transform
+      hover:z-10 hover:scale-150 #{!important};
+      /* &:hover {
          & .films-suggestions-swiper__navigation {
             @apply visible opacity-100;
          }
-      }
+      } */
    }
 }
 .films-suggestions-swiper-numbered {
@@ -82,7 +83,7 @@ body {
    @apply px-[25px] #{!important};
 } */
 
-.films-suggestions-swiper__navigation {
+/* .films-suggestions-swiper__navigation {
    @apply absolute top-0 h-full z-[2] px-2 flex
    justify-center items-center cursor-pointer
    opacity-0 invisible transition-all hover:bg-[rgba(0,0,0,0.2)];
@@ -98,4 +99,4 @@ body {
    svg {
       @apply text-2xl text-mainColor;
    }
-}
+} */
