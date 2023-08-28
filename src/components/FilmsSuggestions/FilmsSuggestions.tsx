@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./FilmsSuggestions.module.scss";
 import Image from "next/image";
 import FilmsSuggestionsSwiper from "./FilmsSuggestionsSwiper";
@@ -25,8 +25,15 @@ export const FilmsSuggestionsRow = ({
 }: {
    suggestion: ISuggestion;
 }) => {
+   const [isHovered, setIsHovered] = useState<boolean>(false);
    return (
-      <div className={styles["films-suggestions__wrapper"]}>
+      <div
+         className={cn(styles["films-suggestions__wrapper"], {
+            [styles["films-suggestions__wrapper_hover"]]: isHovered,
+         })}
+         onMouseOver={() => setIsHovered(true)}
+         onMouseOut={() => setIsHovered(false)}
+      >
          <div className={styles["films-suggestions__title"]}>
             <div className={styles["films-suggestions__text"]}>
                {suggestion.title}
