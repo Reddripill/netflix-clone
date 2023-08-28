@@ -5,7 +5,7 @@
    }
    &__title {
       @apply text-mainColor text-xl cursor-pointer
-      inline-flex items-center gap-1;
+      inline-flex items-center gap-1 shrink;
    }
    &__title:hover .films-suggestions__follow {
       & .films-suggestions__explore {

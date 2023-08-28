@@ -64,8 +64,8 @@ body {
 
 .films-suggestions-swiper {
    & .swiper-slide {
-      @apply h-[146px] w-[260px] z-[1] transition-transform
-      hover:z-10 hover:scale-150 #{!important};
+      @apply h-[146px] w-[260px] z-[1] transition-all
+      origin-top hover:z-10 hover:scale-150;
       /* &:hover {
          & .films-suggestions-swiper__navigation {
             @apply visible opacity-100;
