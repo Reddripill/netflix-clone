@@ -1,6 +1,7 @@
 .button {
    @apply font-poppins text-mainColor px-4 rounded-[4px] 
-   text-sm h-10 flex items-center justify-center transition-colors;
+   text-sm h-10 flex items-center justify-center transition-colors
+   max-lg:h-8 max-lg:px-2 max-lg:text-xs;
    svg {
       @apply sm:text-xl text-base #{!important};
    }

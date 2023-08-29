@@ -4,21 +4,11 @@ import styles from "./FilmsSuggestions.module.scss";
 import Image from "next/image";
 import FilmsSuggestionsSwiper from "./FilmsSuggestionsSwiper";
 import { SwiperSlide } from "swiper/react";
-import { suggestions, testFilm } from "@/utilities/constants";
+import { suggestions } from "@/utilities/constants";
 import { IoIosArrowForward } from "react-icons/io";
 import cn from "classnames";
 import FilmCard from "../UI/FilmCard/FilmCard";
-
-export interface IFilmImage {
-   id: string;
-   image: string;
-}
-
-export interface ISuggestion {
-   title: string;
-   films: IFilmImage[];
-   type?: "numbered";
-}
+import { ISuggestion } from "@/utilities/types";
 
 export const FilmsSuggestionsRow = ({
    suggestion,
@@ -86,7 +76,7 @@ export const FilmsSuggestionsRow = ({
                         </div>
                      </div>
                   ) : (
-                     <FilmCard film={testFilm} />
+                     <FilmCard film={item} />
                   )}
                </SwiperSlide>
             ))}
@@ -97,7 +87,7 @@ export const FilmsSuggestionsRow = ({
 
 export const FilmsSuggestions = () => {
    return (
-      <div className={`${styles["films-suggestions"]} container`}>
+      <div className={`${styles["films-suggestions"]} container-block`}>
          {suggestions.map((suggestion) => (
             <FilmsSuggestionsRow
                suggestion={suggestion}

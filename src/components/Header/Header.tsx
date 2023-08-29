@@ -28,62 +28,68 @@ const Header = () => {
                      />
                   </Link>
                </div>
-               <nav className={cn(styles.nav)}>
-                  <div className={styles["menu-logo"]}>
-                     <Link href="/">
-                        <Image
-                           src={"/logo.png"}
-                           alt="netflix logo"
-                           height={25}
-                           width={95}
-                        />
-                     </Link>
+               <nav
+                  className={cn(styles.nav, {
+                     [styles._active]: isActive,
+                  })}
+               >
+                  <div className={styles["nav__sidebar"]}>
+                     <div className={styles["menu-logo"]}>
+                        <Link href="/">
+                           <Image
+                              src={"/logo.png"}
+                              alt="netflix logo"
+                              height={25}
+                              width={95}
+                           />
+                        </Link>
+                     </div>
+                     <ul className={styles["nav-wrapper"]}>
+                        <li
+                           className={cn(styles["nav-item"], {
+                              [styles._active]:
+                                 pathname === "/home" || pathname === "/",
+                           })}
+                        >
+                           <Link href="/">Home</Link>
+                        </li>
+                        <li
+                           className={cn(styles["nav-item"], {
+                              [styles._active]: pathname === "/tvShows",
+                           })}
+                        >
+                           <Link href="tvShows">TV Shows</Link>
+                        </li>
+                        <li
+                           className={cn(styles["nav-item"], {
+                              [styles._active]: pathname === "/originals",
+                           })}
+                        >
+                           <Link href="originals">Originals</Link>
+                        </li>
+                        <li
+                           className={cn(styles["nav-item"], {
+                              [styles._active]: pathname === "/movies",
+                           })}
+                        >
+                           <Link href="movies">Movies</Link>
+                        </li>
+                        <li
+                           className={cn(styles["nav-item"], {
+                              [styles._active]: pathname === "/recentlyAdded",
+                           })}
+                        >
+                           <Link href="recentlyAdded">Recently Added</Link>
+                        </li>
+                        <li
+                           className={cn(styles["nav-item"], {
+                              [styles._active]: pathname === "/myList",
+                           })}
+                        >
+                           <Link href="myList">My List</Link>
+                        </li>
+                     </ul>
                   </div>
-                  <ul className={styles["nav-wrapper"]}>
-                     <li
-                        className={cn(styles["nav-item"], {
-                           [styles._active]:
-                              pathname === "/home" || pathname === "/",
-                        })}
-                     >
-                        <Link href="/">Home</Link>
-                     </li>
-                     <li
-                        className={cn(styles["nav-item"], {
-                           [styles._active]: pathname === "/tvShows",
-                        })}
-                     >
-                        <Link href="tvShows">TV Shows</Link>
-                     </li>
-                     <li
-                        className={cn(styles["nav-item"], {
-                           [styles._active]: pathname === "/originals",
-                        })}
-                     >
-                        <Link href="originals">Originals</Link>
-                     </li>
-                     <li
-                        className={cn(styles["nav-item"], {
-                           [styles._active]: pathname === "/movies",
-                        })}
-                     >
-                        <Link href="movies">Movies</Link>
-                     </li>
-                     <li
-                        className={cn(styles["nav-item"], {
-                           [styles._active]: pathname === "/recentlyAdded",
-                        })}
-                     >
-                        <Link href="recentlyAdded">Recently Added</Link>
-                     </li>
-                     <li
-                        className={cn(styles["nav-item"], {
-                           [styles._active]: pathname === "/myList",
-                        })}
-                     >
-                        <Link href="myList">My List</Link>
-                     </li>
-                  </ul>
                </nav>
             </div>
             <div className={styles.actions}>

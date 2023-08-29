@@ -1,14 +1,16 @@
 .films-suggestions {
-   @apply mb-12 mt-6 flex flex-col gap-14;
+   @apply mb-12 flex flex-col xl:gap-14 lg:-mt-[100px] md:-mt-[60px]
+   max-md:mt-6 lg:gap-8 md:gap-6;
    &__wrapper {
-      @apply flex flex-col gap-4 relative z-[1] transition-all;
+      @apply flex flex-col gap-4 relative z-[1] transition-all
+      items-start md:gap-2;
       &_hover {
          @apply z-[5];
       }
    }
    &__title {
       @apply text-mainColor text-xl cursor-pointer
-      inline-flex items-center gap-1 shrink;
+      inline-flex items-center gap-1 shrink md:text-lg;
    }
    &__title:hover .films-suggestions__follow {
       & .films-suggestions__explore {
@@ -19,11 +21,11 @@
       }
    }
    &__follow {
-      @apply flex items-center gap-1 relative;
+      @apply flex items-center gap-1 relative max-lg:hidden;
    }
    &__explore {
       @apply text-mainColor text-sm transition-all opacity-0
-      invisible;
+      invisible md:text-xs;
    }
    &__arrow {
       @apply transition-all absolute left-0;

@@ -20,8 +20,8 @@ body {
    @apply font-openSans bg-mainBg;
 }
 
-.container {
-   @apply ml-16;
+.container-block {
+   @apply xl:pl-16 lg:pl-10 md:pl-8 max-md:pl-4;
 }
 
 .texts {
@@ -65,7 +65,7 @@ body {
 .films-suggestions-swiper {
    & .swiper-slide {
       @apply h-[146px] w-[260px] z-[1] transition-all
-      origin-top hover:z-10 hover:scale-150;
+      md:origin-top md:hover:z-10 md:hover:scale-150;
       /* &:hover {
          & .films-suggestions-swiper__navigation {
             @apply visible opacity-100;

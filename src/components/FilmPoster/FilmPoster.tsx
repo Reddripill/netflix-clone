@@ -3,13 +3,13 @@ import React from "react";
 import styles from "./FilmPoster.module.scss";
 import Button from "../UI/Button/Button";
 import Image from "next/image";
-import { filmPoster, testFilm } from "@/utilities/constants";
+import { filmPoster } from "@/utilities/constants";
 import { BiPlay, BiInfoCircle } from "react-icons/bi";
 
 const FilmPoster = () => {
    return (
       <div className={styles["film-poster"]}>
-         <div className={"container"}>
+         <div className={"container-block"}>
             <div className={styles["film-poster__wrapper"]}>
                <div className={styles["film-poster__content"]}>
                   <div className={styles["film-poster__contributor"]}>
@@ -22,7 +22,7 @@ const FilmPoster = () => {
                      <div className={styles["film-poster__text"]}>Show</div>
                   </div>
                   <img
-                     src={testFilm.label}
+                     src={filmPoster.label}
                      className={styles["film-poster__label"]}
                      alt="Label of the film"
                   />

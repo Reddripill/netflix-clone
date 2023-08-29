@@ -1,16 +1,27 @@
 .film-poster {
-   @apply relative w-full pb-[calc((64/1440)*100%)] pt-[calc((400/1440)*100%)];
+   @apply relative w-full xl:pt-[400px] xl:h-[810px] lg:h-[650px]
+   lg:pt-[250px] max-lg:h-[450px] md:pt-[190px] sm:pt-[250px]
+   max-sm:pt-[280px];
    &__wrapper {
-      @apply relative z-[5] flex flex-col gap-8 items-start;
+      @apply relative z-[5] flex flex-col gap-8 items-start
+      max-lg:gap-4;
    }
    &__content {
-      @apply flex flex-col gap-8 text-mainColor text-base;
+      @apply flex flex-col gap-8 text-mainColor text-base
+      max-lg:gap-4;
    }
    &__contributor {
-      @apply flex items-center gap-3;
+      @apply flex items-center gap-3 max-sm:gap-2;
+   }
+   &__text {
+      @apply max-sm:text-sm;
    }
    &__name {
       @apply uppercase text-mainColor text-4xl;
+   }
+   &__label {
+      @apply xl:max-w-full lg:max-w-[250px] sm:max-w-[200px]
+      max-sm:max-w-[150px];
    }
    &__actions {
       @apply flex items-center gap-3;
@@ -18,16 +29,16 @@
    &__action {
       @apply flex items-center gap-1;
       & svg {
-         @apply text-2xl;
+         @apply text-2xl md:text-xl;
       }
    }
 }
 .film-poster-image {
-   @apply absolute top-0 left-0 w-full;
+   @apply absolute top-0 left-0 w-full h-full;
    &__wrapper {
-      @apply relative h-full w-full pb-[calc((810/1440)*100%)];
+      @apply relative h-full w-full;
       & img {
-         @apply object-cover object-top z-[2];
+         @apply object-cover object-center z-[2];
       }
    }
 }

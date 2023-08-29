@@ -27,3 +27,9 @@ export interface IFilm {
 }
 
 export type RefType<T> = React.RefObject<T>;
+
+export interface ISuggestion {
+   title: string;
+   films: IFilm[];
+   type?: "numbered";
+}

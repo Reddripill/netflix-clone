@@ -20,7 +20,7 @@ const FilmsSuggestionsSwiper = ({
             loop={false}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
-            initialSlide={1}
+            initialSlide={0}
             slidesPerView={"auto"}
             spaceBetween={type === "numbered" ? 25 : 16}
             className={
