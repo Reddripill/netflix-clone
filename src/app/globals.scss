@@ -75,7 +75,7 @@ body {
 }
 .films-suggestions-swiper-numbered {
    & .swiper-slide {
-      @apply flex basis-auto shrink;
+      @apply w-auto;
    }
 }
 

@@ -36,9 +36,7 @@
    }
 }
 .films-suggestions-numbered {
-   &__wrapper {
-      @apply flex items-center;
-   }
+   @apply flex items-center;
    &__image {
       @apply relative h-[185px] w-[132px] rounded-md
       overflow-hidden cursor-pointer;

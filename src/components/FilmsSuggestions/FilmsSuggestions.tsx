@@ -42,11 +42,6 @@ export const FilmsSuggestionsRow = ({
                <SwiperSlide key={item.id}>
                   {suggestion.type === "numbered" ? (
                      <div className={styles["films-suggestions-numbered"]}>
-                        <div
-                           className={
-                              styles["films-suggestions-numbered__wrapper"]
-                           }
-                        >
                            <div
                               className={cn(
                                  styles["films-suggestions-numbered__integer"],
@@ -73,7 +68,6 @@ export const FilmsSuggestionsRow = ({
                                  fill
                               />
                            </div>
-                        </div>
                      </div>
                   ) : (
                      <FilmCard film={item} />
