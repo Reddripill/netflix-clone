@@ -1,7 +1,16 @@
 .header {
-   @apply fixed bg-header w-full h-14 z-50;
+   @apply absolute top-0 left-0 w-full h-14;
 }
 .wrapper {
+   @apply fixed top-0 left-0 bg-header w-full h-14 z-50 
+   bg-transparent transition-colors;
+}
+.wrapper {
+   &._scroll {
+      @apply bg-none bg-[rgba(255,255,255,0.5)];
+   }
+}
+.container {
    @apply flex h-full justify-between items-center gap-[calc((40/1440)*100%)]
   relative ml-8 mr-12 max-md:mx-4;
 }

@@ -30,7 +30,7 @@
    &__action {
       @apply w-7 h-7 rounded-full border border-mainColor
       flex items-center justify-center
-      cursor-pointer transition-all hover:bg-mainColor;
+      cursor-pointer transition-colors hover:bg-mainColor;
       &_collapsed {
          @apply -rotate-180;
       }
@@ -42,7 +42,7 @@
       }
       &:hover {
          & svg {
-            @apply hover:text-mainBg;
+            @apply text-mainBg;
          }
       }
    }

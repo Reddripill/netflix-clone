@@ -42,32 +42,32 @@ export const FilmsSuggestionsRow = ({
                <SwiperSlide key={item.id}>
                   {suggestion.type === "numbered" ? (
                      <div className={styles["films-suggestions-numbered"]}>
-                           <div
-                              className={cn(
-                                 styles["films-suggestions-numbered__integer"],
-                                 styles[
-                                    `films-suggestions-numbered__integer_${
-                                       index + 1
-                                    }`
-                                 ]
-                              )}
-                           >
-                              <img
-                                 src={`/numbers/${index + 1}.svg`}
-                                 alt="Place on top"
-                              />
-                           </div>
-                           <div
-                              className={
-                                 styles["films-suggestions-numbered__image"]
-                              }
-                           >
-                              <Image
-                                 src={item.image}
-                                 alt="Suggestioned Film"
-                                 fill
-                              />
-                           </div>
+                        <div
+                           className={cn(
+                              styles["films-suggestions-numbered__integer"],
+                              styles[
+                                 `films-suggestions-numbered__integer_${
+                                    index + 1
+                                 }`
+                              ]
+                           )}
+                        >
+                           <img
+                              src={`/numbers/${index + 1}.svg`}
+                              alt="Place on top"
+                           />
+                        </div>
+                        <div
+                           className={
+                              styles["films-suggestions-numbered__image"]
+                           }
+                        >
+                           <Image
+                              src={item.image}
+                              alt="Suggestioned Film"
+                              fill
+                           />
+                        </div>
                      </div>
                   ) : (
                      <FilmCard film={item} />

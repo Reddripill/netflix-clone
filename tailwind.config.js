@@ -13,6 +13,7 @@ module.exports = {
             redColor: "#D81F26",
             mainBg: "#141414",
             green: "#3DCD5E",
+            headerScroll: "rgba(0,0,0,0.3)",
          },
          fontFamily: {
             quick: ["var(--font-quicksand)"],
@@ -41,6 +42,7 @@ module.exports = {
             "linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, #141414 15%)",
          header:
             "linear-gradient(180deg, rgba(20, 20, 20, 0.50) 0%, rgba(20, 20, 20, 0.00) 100%)",
+         none: "none",
       },
    },
    plugins: [],

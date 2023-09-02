@@ -2,7 +2,6 @@ import "./globals.scss";
 import type { Metadata } from "next";
 import styles from "./layout.module.scss";
 import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 import Main from "@/components/Main/Main";
 import { openSans, roboto } from "@/utilities/fonts";
 
@@ -25,7 +24,6 @@ export default function RootLayout({
             <div className={styles.wrapper}>
                <Header />
                <Main>{children}</Main>
-               {/* <Footer/> */}
             </div>
          </body>
       </html>

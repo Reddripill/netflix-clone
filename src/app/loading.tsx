@@ -1,6 +1,6 @@
 import React from "react";
 
-const Page = ({ params }: { params: { film: string } }) => {
+export default function Loading() {
    return (
       <div
          className="loading-wrapper"
@@ -11,9 +11,7 @@ const Page = ({ params }: { params: { film: string } }) => {
             marginTop: "150px",
          }}
       >
-         Film Name: {params.film}
+         loading...
       </div>
    );
-};
-
-export default Page;
+}

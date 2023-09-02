@@ -17,7 +17,7 @@
 } */
 
 body {
-   @apply font-openSans bg-mainBg;
+   @apply font-openSans;
 }
 
 .container-block {
@@ -59,10 +59,13 @@ body {
 
 .films-suggestions-swiper,
 .films-suggestions-swiper-numbered {
-   @apply w-full xl:overflow-x-visible xl:overflow-y-visible #{!important};
+   @apply w-full md:overflow-x-visible md:overflow-y-visible #{!important};
 }
 
 .films-suggestions-swiper {
+   & .swiper-wrapper {
+      @apply gap-4;
+   }
    & .swiper-slide {
       @apply h-[146px] w-[260px] z-[1] transition-all
       md:origin-top md:hover:z-10 md:hover:scale-150;
@@ -74,6 +77,9 @@ body {
    }
 }
 .films-suggestions-swiper-numbered {
+   & .swiper-wrapper {
+      @apply gap-[25px];
+   }
    & .swiper-slide {
       @apply w-auto;
    }

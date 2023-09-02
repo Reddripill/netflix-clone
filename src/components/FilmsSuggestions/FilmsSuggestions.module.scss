@@ -1,5 +1,5 @@
 .films-suggestions {
-   @apply mb-12 flex flex-col xl:gap-14 lg:-mt-[100px] md:-mt-[60px]
+   @apply flex flex-col xl:gap-14 lg:-mt-[100px] md:-mt-[60px]
    max-md:mt-6 lg:gap-8 md:gap-6;
    &__wrapper {
       @apply flex flex-col gap-4 relative z-[1] transition-all

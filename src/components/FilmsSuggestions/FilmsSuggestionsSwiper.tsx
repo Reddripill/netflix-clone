@@ -22,7 +22,6 @@ const FilmsSuggestionsSwiper = ({
             onSlideChange={() => console.log("slide change")}
             initialSlide={0}
             slidesPerView={"auto"}
-            spaceBetween={type === "numbered" ? 25 : 16}
             className={
                type === "numbered"
                   ? "films-suggestions-swiper-numbered"
